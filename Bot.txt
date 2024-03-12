@@ -1,0 +1,29 @@
+#include "../inc/Command.hpp"
+
+const std::map<std::string, std::string> Command::_qoutes = {
+    {"\"La vita è uguale a una scatola di cioccolatini, non sai mai quello che ti capita.\"", "Forrest Gump"},
+    {"\"La follia, come sai, è come la gravità... basta solo una piccola spinta.\"", "Joker - Il Cavaliere Oscuro"},
+    {"\"Cavalcate ora! Cavalcate ora! Cavalcate per la rovina e la fine del mondo!\nMorte! Morte! Morte!\nAvanti Eorlingas! Morte!\"", "Re Theoden - Il Signore degli Anelli: Il Ritorno del Re"},
+    {"\"Questi non sono i droidi che state cercando\"", "Obi-Wan Kenobi - Star Wars: Episodio IV - Una nuova speranza"},
+    {"\"No, Io sono tuo padre\"", "Darth Vader - Star Wars: Episodio V - L'Impero colpisce ancora"},
+    {"\"Io ne ho viste cose che voi umani non potreste immaginarvi: navi da combattimento in fiamme al largo dei bastioni di Orione, e ho visto i raggi B balenare nel buio vicino alle porte di Tannhäuser.\nE tutti quei momenti andranno perduti nel tempo, come lacrime nella pioggia.\nÈ tempo di morire.\"", "Roy Batty - Blade Runner"
+    {"\"Tu non sei il tuo lavoro, non sei la quantità di soldi che hai in banca, non sei la macchina che guidi, né il contenuto del tuo portafogli, non sei i tuoi vestiti di marca.\nSei la canticchiante e danzante merda del mondo!\"", "Tyler Durden - Fight Club"},
+    {"\"Va be', finisco di mangiare la peperonata e scendo!\"", "Aldo - Tre uomini e una gamba"},
+    {"\"Mi dispiace, ma io so' io e voi non siete un cazzo!\"", "Marchese Onofrio del Grillo - Il Marchese del Grillo"},
+    {"\"Non esiste bene e male, esiste solo il potere... e quelli troppo deboli per averlo.", "Lord Voldemort - Harry Potter e la Pietra Filosofale"},
+    {"\"E allora mi costruirò un enorme luna park tutto mio, con blackjack e squillo di lusso! Anzi, senza il Luna park.\"", "Bender - Futurama"},
+    {"\"Dalla devozione nasce il coraggio. Dal coraggio il sacrificio. Dal sacrificio la morte. Dunque togliti pure la vita.\"", "L'Oratore - Destiny 2"},
+    {"\"Ah, schiavi ignoranti. Finalmente ve ne siete accorti, vero?\"", "Oceiros, il Re Consumato - Dark Souls 3"},
+    {"\"Unisciti alla famiglia del Re Serpente... Insieme, divoreremo gli dei!\"", "Rykard, signore della blasfemia - Elden Ring"},
+    {"\"Nessun sacrificio è troppo grande.\nNessuna mente con cui pensare.\nNessun volontà da spezzare.\nNessuna voce per urlare di dolore...\n\nNato da Dio e dal Vuoto.\nSigillerai l'accecante luce che tormenta i loro sogni.\n\nTu sei il Ricettacolo.\nTu sei il Cavaliere Vacuo.\"", "Il Re Pallido - Hollow Knight"},
+
+    {"\"Ogni volta che penso che tu abbia raggiunto un limite, tu, tu continui a alzare l'asticella. Sei come il Michael Jordan di essere un figlio di puttana.\"", "Marty Hart - True Detective"},
+    {"\"Ricorda: la realta è un'illusione. L'universo è un ologramma. Compra oro! Ciaooo!\"", "Bill Cipher - Gravity Falls"},
+    {"\"The inner machinations of my mind are an enigma\"", "Patrick Star - Spongebob Squarepants"},
+    {"\"Quando mai una mente sana\"", " - Bloodborne"},
+};
+
+void Command::bot(Server *s, Channel *c, std::string msg)
+{
+
+}
