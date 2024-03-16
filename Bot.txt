@@ -1,26 +1,70 @@
 #include "../inc/Command.hpp"
 
 const std::map<std::string, std::string> Command::_qoutes = {
-    {"\"La vita è uguale a una scatola di cioccolatini, non sai mai quello che ti capita.\"", "Forrest Gump"},
+    {"\"La vita è uguale a una scatola di cioccolatini, non sai mai quello che ti capita.\"", "Forrest Gump - Forrest Gump"},
     {"\"La follia, come sai, è come la gravità... basta solo una piccola spinta.\"", "Joker - Il Cavaliere Oscuro"},
     {"\"Cavalcate ora! Cavalcate ora! Cavalcate per la rovina e la fine del mondo!\nMorte! Morte! Morte!\nAvanti Eorlingas! Morte!\"", "Re Theoden - Il Signore degli Anelli: Il Ritorno del Re"},
-    {"\"Questi non sono i droidi che state cercando\"", "Obi-Wan Kenobi - Star Wars: Episodio IV - Una nuova speranza"},
-    {"\"No, Io sono tuo padre\"", "Darth Vader - Star Wars: Episodio V - L'Impero colpisce ancora"},
-    {"\"Io ne ho viste cose che voi umani non potreste immaginarvi: navi da combattimento in fiamme al largo dei bastioni di Orione, e ho visto i raggi B balenare nel buio vicino alle porte di Tannhäuser.\nE tutti quei momenti andranno perduti nel tempo, come lacrime nella pioggia.\nÈ tempo di morire.\"", "Roy Batty - Blade Runner"
+    {"\"Questi non sono i droidi che state cercando.\"", "Obi-Wan Kenobi - Star Wars: Episodio IV - Una nuova speranza"},
+    {"\"No, Io sono tuo padre.\"", "Darth Vader - Star Wars: Episodio V - L'Impero colpisce ancora"},
+    
+    {"\"Io ne ho viste cose che voi umani non potreste immaginarvi: navi da combattimento in fiamme al largo dei bastioni di Orione, e ho visto i raggi B balenare nel buio vicino alle porte di Tannhäuser.\nE tutti quei momenti andranno perduti nel tempo, come lacrime nella pioggia.\nÈ tempo di morire.\"", "Roy Batty - Blade Runner"},
     {"\"Tu non sei il tuo lavoro, non sei la quantità di soldi che hai in banca, non sei la macchina che guidi, né il contenuto del tuo portafogli, non sei i tuoi vestiti di marca.\nSei la canticchiante e danzante merda del mondo!\"", "Tyler Durden - Fight Club"},
     {"\"Va be', finisco di mangiare la peperonata e scendo!\"", "Aldo - Tre uomini e una gamba"},
     {"\"Mi dispiace, ma io so' io e voi non siete un cazzo!\"", "Marchese Onofrio del Grillo - Il Marchese del Grillo"},
     {"\"Non esiste bene e male, esiste solo il potere... e quelli troppo deboli per averlo.", "Lord Voldemort - Harry Potter e la Pietra Filosofale"},
+    
     {"\"E allora mi costruirò un enorme luna park tutto mio, con blackjack e squillo di lusso! Anzi, senza il Luna park.\"", "Bender - Futurama"},
     {"\"Dalla devozione nasce il coraggio. Dal coraggio il sacrificio. Dal sacrificio la morte. Dunque togliti pure la vita.\"", "L'Oratore - Destiny 2"},
     {"\"Ah, schiavi ignoranti. Finalmente ve ne siete accorti, vero?\"", "Oceiros, il Re Consumato - Dark Souls 3"},
     {"\"Unisciti alla famiglia del Re Serpente... Insieme, divoreremo gli dei!\"", "Rykard, signore della blasfemia - Elden Ring"},
     {"\"Nessun sacrificio è troppo grande.\nNessuna mente con cui pensare.\nNessun volontà da spezzare.\nNessuna voce per urlare di dolore...\n\nNato da Dio e dal Vuoto.\nSigillerai l'accecante luce che tormenta i loro sogni.\n\nTu sei il Ricettacolo.\nTu sei il Cavaliere Vacuo.\"", "Il Re Pallido - Hollow Knight"},
 
-    {"\"Ogni volta che penso che tu abbia raggiunto un limite, tu, tu continui a alzare l'asticella. Sei come il Michael Jordan di essere un figlio di puttana.\"", "Marty Hart - True Detective"},
+    {"\"Sventura a te, Perry l'ornitorinco!\"", "Dr. Heinz Doofenshmirtz - Phineas e Ferb"},
+    {"\"Ti conviene chiamare Saul!\"", "Saul Goodman - Breaking Bad"},
+    {"\"Gli farò un offerta che non può rifiutare.\"", "Don Vito Corleone - Il padrino"},
+    {"\"Buongiorno! Ah e casomai non vi rivedessi, buon pomeriggio, buonasera e buonanotte!\"", "Truman Burbank - The Truman Show"},
+    {"\"Chiuque salva una vita, salva il mondo intero.\"", "Itzhak Stern - Schindler's List"},
+    
+    {"\"Mi piace l'odore del napalm di mattina.\"", "Tenente Colonnello William Kilgore - Apocalypse Now"},
+    {"\"La beffa più grande che il diavolo abbia mai fatto è stato convincere il mondo che lui non esiste. E come niente... sparisce.\"", "Verbal Klint - I soliti sospetti"},
+    {"\"Sei solo chiacchiere e distintivo, solo chiacchiere e distintivo. Sei solo chiacchiere e distintivo!\"", "Al Capone - The Untouchables - Gli intoccabili"},
+    {"\"Che io mi ricordi, ho sempre voluto fare il gangster.\"", "Henry Hill - Quei bravi ragazzi"},
+    {"\"L'avidità, non trovo una parola migliore, è valida, l'avidità è giusta, l'avidità funziona, l'avidità chiarifica, penetra e cattura l'essenza dello spirito evolutivo.\nL'avidità in tutte le sue forme: l'avidità di vita, di amore, di sapere, di denaro, ha improntato lo slancio in avanti di tutta l'umanità.\nE l'avidità, ascoltatemi bene, non salverà solamente la Teldar Carta, ma anche l'altra disfunzionante società che ha nome America.\"", "Gordon Gekko - Wall Street"},
+
+    {"\"Eh?! Aurora Boreale? In questo periodo dell'anno? A questa ora del giorno? In questa zona del paese? Localizzata interamente dentro la sua cucina?\"", "Sovrintendente Chalmers - I Simpson"},
+    {"\"Ehi, Armonica, quando toccherà a te, prega che sia uno che sa dove sparare... Vattene, vattene! Non mi va che mi guardi mentre muoio!\"", "Cheyenne - C'era una volta il West"},    
+    {"\"Se premi il grilletto e mi colpisci io cado... E se io cado si dovranno rifare tutte le mappe. E con me sparirebbe metà di questo fottuto paese, compreso te.\"", "Sean Mallory - Giu' la testa"},
+    {"\"Quando un uomo con la pistola incontra un uomo col fucile, quello con la pistola è un uomo morto.\"", "Ramon Rojo - Per un pugno di dollari"},
+    {"\"Quei due piuttosto che averli alle spalle è meglio averli di fronte, orizzontali, possibilmente freddi.\"", "El Indio - Per qualche dollaro in piu'"},
+    
+    {"\"Vedi, il mondo si divide in due categorie: chi ha la pistola carica e chi scava. Tu scavi.\"", "Il Biondo - Il buono, il brutto, il cattivo"},
+    {"\"Sono stanco, capo.\"", "John Coffey - Il miglio verde"},
+    {"\"Sto per avere un vecchio amico per cena stasera. Addio.\"", "Hannibal Lekter - Il silenzio degli innocenti"},
+    {"\"E sai come chiamano un quarto di libbra con formaggio a Parigi?\"", "Vincent Vega - Pulp Fiction"},
+    {"\"Da noi si aspettano che ci comportiamo da professionisti. Uno psicopatico, non è un professionista. Io non ci lavoro con i pazzi, quegli stronzi da manicomio non sai mai come reagiscono.\"", "Mr. White - Le iene"},
+
+    {"\"Mi trovi sadico? Sai, scommetto che adesso potrei friggerti un uovo in testa, se solo volessi. Sai bimba, mi piace pensare che tu sia abbastanza lucida persino ora da sapere che non c'è nulla di sadico nelle mie azioni. Forse nei confronti di tutti quegli altri, quei buffoni, ma non con te. No, bimba, in questo momento sono proprio io, all'apice del mio masochismo.\"", "Bill Gunn - Kill Bill"},
+    {"\"Signori, avevate la mia curiosità, ma ora avete la mia attenzione.\"", "Calvin Candie - Django Unchained"},
+    {"\"Signori, non potete fare a botte in Centrale Operativa!\"", "Presidente Merkin Muffley - Il dottor Stranamore"},
+    {"\"Siamo nati dal sangue, resi uomini dal sangue, annientati dal sangue. I nostri occhi sono ancora chiusi... Temi il sangue antico.\"", "Mastro Willem - Bloodborne"},
+    {"\"Esitare è una sconfitta\"", "Isshin, il Maestro - Sekiro: Shadows Die Twice"},
+  
+    //ricontrollare
+    {"\"Il capitano non ha studiato! L'hanno assemblato alla Scuola Ufficiali con pezzi di ricambio di soldati morti.\"", "Soldato Richard Reiben - Salvate il soldato Ryan"},
+    {"\"Combattere in uno scantinato presenta molte difficoltà. E la prima è che si combatte in uno scantinato.\"", "Tenente Aldo Raine - Bastardi senza gloria"},
+
+    {"\"C'è un luogo ed un momento per ogni cosa. Ma non ora.\"", "Professor Oak - Pokemon"},
+    {"\"\"", " - Il grande Lebowski"},
+    {"\"\"", " - Shining"},
+    {"\"\"", " - Le ali della liberta'"},
+    {"\"\"", " - Toy Story"},
+    {"\"\"", " - Cars"},
+    {"\"\"", " - Shrek"},
+    {"\"\"", " - Alla Ricerca di Nemo"},
+    {"\"\"", " - "},
+    {"\"Ogni volta che penso che tu abbia raggiunto un limite, tu, tu continui a alzare l'asticella. Sei come il Michael Jordan dei figli di puttana.\"", "Marty Hart - True Detective"},
     {"\"Ricorda: la realta è un'illusione. L'universo è un ologramma. Compra oro! Ciaooo!\"", "Bill Cipher - Gravity Falls"},
     {"\"The inner machinations of my mind are an enigma\"", "Patrick Star - Spongebob Squarepants"},
-    {"\"Quando mai una mente sana\"", " - Bloodborne"},
 };
 
 void Command::bot(Server *s, Channel *c, std::string msg)
