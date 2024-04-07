@@ -76,7 +76,7 @@ const std::string Command::_qoutes[100] = {
      "\"Due tipi di persone vivono in Alaska: quelli che ci sono nati e quelli che arrivano qui per scappare da qualcosa. Io non ci sono nata.\" Rachel Clement - Insomnia",
      "\"È una cosa grossa uccidere un uomo: gli levi tutto quello che ha... e tutto quello che sperava di avere.\" William Munny - Gli spietati",
      "\"La vanità è decisamente il mio peccato preferito.\" John Milton - L'avvocato del diavolo",
-     "\"Io volevo tanto vedere l'esotico Vietnam, il gioiello dell'Asia orientale. Io volevo incontrare gente interessante, stimolante, con una civiltà antichissima... e farli fuori tuttii. Volevo essere il primo ragazzo del mio palazzo a fare centro dentro qualcuno!\" Soldato Joker - Full Metal Jacket",
+     "\"Io volevo tanto vedere l'esotico Vietnam, il gioiello dell'Asia orientale. Io volevo incontrare gente interessante, stimolante, con una civiltà antichissima... e farli fuori tutti. Volevo essere il primo ragazzo del mio palazzo a fare centro dentro qualcuno!\" Soldato Joker - Full Metal Jacket",
 
      "\"Apri la saracinesca esterna, HAL.\" David Bowman - 2001: Odissea nello spazio",
      "\"Tu non hai visto niente...\" Skipper - Madagascar",
@@ -108,16 +108,24 @@ const std::string Command::_qoutes[100] = {
      "\"Che razza di uomo è uno che parla con la DEA? Non è un uomo. Non lo è affatto. Sei un piccolo topo paralitico. Bella reputazione da lasciarsi alle spalle. È così che vuoi essere ricordato? È l'ultima volta che puoi guardarmi.\" Gustavo Fring - Breaking Bad",
      "\"Questa piccola manovra ci costerà cinquantuno anni.\" Cooper - Interstellar",
 
+     "\"I modi definiscono l'uomo... Intuite il significato? Vado a spiegarmi meglio.\" Harry Hart - Kingsman – Secret Service",
+     "\"Non è tua la colpa?! Chi mi ha riempito la testa di sogni?! Chi mi ha spinto ad allenarmi fino a spezzarmi le ossa?! Chi mi ha negato il mio destino?!\" Tai Lung - Kung Fu Panda",
+     "\"Con Saul siamo 10. Dovrebbero bastare, non credi? Pensi ne serva uno in più? Pensi ne serva uno in più. Ne prendiamo uno in più.\" Danny Ocean - Ocean's Eleven - Fate il vostro gioco",
+     "\"Diciamo che sono il mostro di Frankenstein... E cerco il mio creatore.\" Magneto - X-Men - L'inizio",
+     "\"Speranza. È quella l'unica cosa più forte della paura. Un po' di speranza è efficace, molta speranza è pericolosa: una scintilla va bene, purché sia contenuta.\" Presidente Coriolanus Snow - Hunger Games",
+
+     "\"Non me ne frega niente!\" Tenente Samuel Gerard - Il fuggitivo",
+     "\"Grande Spirito e Creatore della vita, un guerriero va a te veloce e dritto come una freccia lanciata nel sole. Da' lui benvenuto e lascia lui prendere posto in Gran Consiglio di mio popolo. È Uncas, mio figlio. Di' lui di essere paziente e da' a me una rapida morte, perché loro sono tutti là, meno uno... io Chingachgook, l'ultimo dei Mohicani.\" Chingachgook - L'ultimo dei Mohicani",
+     "\"Garbitsch, che significano questi stanziamenti? Venticinque milioni per campi di concentramento. Mi sembra leggermente esagerato.\" Adenoid Hynkel - Il grande dittatore",
 //ricontrollare
      "\"C'è un luogo ed un momento per ogni cosa. Ma non ora.\" Professor Oak - Pokemon",
      "\"\"  - Alla Ricerca di Nemo",
      "\"\"  - Il talento di Mister Ripley",
-     "\"\"  - Amleto",
-     "\"\"  - A beautiful mind",
      "\"\"  - The Social Network",
+     "\"\"  - L'ultimo re di Scozia",
 
      "\"\"  - Il discorso del re",
-     "\"\"  - Il re leone",
+     "\"\"  - The imitation game",
      "\"\"  - I tre giorni del Condor",
      "\"\"  - Il grande Gatbsy",
      "\"\"  - Una notte da leoni",
@@ -125,16 +133,14 @@ const std::string Command::_qoutes[100] = {
      "\"\"  - Morto Stalin se ne fa un altro",
      "\"\"  - La vita è bella",
      "\"\"  - Alien",
-     "\"\"  - Top Gun",
      "\"\"  - The Mandalorian",
 
      "\"\"  - Cars",
-     "\"\"  - Doctor Who",
      "\"\"  - The Big Bang Theory",
      "\"\"  - Pretty Woman",
      "\"\"  - Una notte al museo",
-
      "\"\"  - Doctor Strange",
+
      "\"\"  - Iron Man",
      "\"\"  - Peaky Blinders",
      "\"Credo che la coscienza umana sia un tragico passo falso dell'evoluzione. Siamo troppo consapevoli di noi stessi. La natura ha creato un aspetto della natura separato da se stessa. Siamo creature che non dovrebbero esistere... per le leggi della natura.\" Rustin Cohle - True Detective",
