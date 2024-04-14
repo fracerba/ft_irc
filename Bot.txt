@@ -54,7 +54,7 @@ const std::string Command::_qoutes2[20] = {
 
 const std::string Command::_qoutes3[20] = {
 	"\"O fai di tutto per vivere... o fai di tutto per morire.\" Andy Dufresne - Le ali della libertà",
-	"\"James, meritatelo! Meritatelo!\" Capitano Miller - Salvate il soldato Ryan",
+	"\"So solo che più uomini uccido e più mi sento lontano da casa.\" Capitano Miller - Salvate il soldato Ryan",
 	"\"Questo non è volare, questo è cadere con stile!\" Buzz Lightyear - Toy Story",
 	"\"ALLORA IL MONDO È IMPAZZITO?! SONO IL SOLO DA QUESTE PARTI CHE ABBIA RISPETTO PER LE REGOLE?! SEGNA ZERO!!\" Walter Sobchak - Il grande Lebowski",
 	"\"Gli orchi sono come le cipolle.\" Shrek - Shrek",
