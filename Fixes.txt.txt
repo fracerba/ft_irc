@@ -1,0 +1,93 @@
+//Bot.cpp
+void Command::bot(std::vector<std::string> message, User &user, Server &server)  
+{
+	std::vector<std::string> message2;
+	if (message.size() < 2)
+		return ;
+	if (message[1].find(":") == 0)
+		message[1] = message[1].substr(1, message[1].size() - 1);
+	split(message[1], " ", message2);
+	if (message2.size() < 1)
+		return ;
+	std::string m = message2[0];
+	if (m.find("!") != 0)
+	{
+		botError(user);
+		return ;
+	}
+	//resto della funzione
+}
+
+void Command::startBot(User &user)
+{
+	std::string response = ":Solver PRIVMSG " + user.getNickname() + " :Hello, I am the Solver and you are?\r\n";
+	send(user.getSocket(), response.c_str(), response.size(), 0);
+	response = ":Solver PRIVMSG " + user.getNickname() + " :" + user.getNickname() + "? Well, glad to meet you, meat puppet!\r\n";
+	send(user.getSocket(), response.c_str(), response.size(), 0);
+	//resto della funzione
+}
+
+//Command.cpp
+void Command::quit(std::vector<std::string> message, User &user, Server &server)
+{
+	std::vector<std::string> channels = user.getChannels();
+	for (int i = 0; i < user.getNbChannels(); i++)
+	{
+		Channel *tmp = server.getChannel(channels[i]);
+		if (tmp->getNbOperators() == 1 && tmp->isOperator(user.getNickname()) && tmp->getNbUsers() > 1)
+			tmp->setNewOperator(user.getNickname(), server);
+		tmp->removeUser(user.getNickname());
+		user.removeChannel(tmp->getName());
+		if (!tmp->isEmpty())
+		{
+			std::string response = ":" + user.getNickname() + "!" + user.getUsername() + "@localhost PART " + tmp->getName() + "\r\n";
+			tmp->sendToChannel(response, user.getNickname(), false, server);
+			tmp->UserList(&user, server);
+		}
+		else
+			server.removeChannel(*tmp);
+	}
+	server.setPartialCommand(user.getSocket(), "");
+	if (message.size() != 0)
+	{
+		if (message[0].find(":") == 0)
+			message[0] = message[0].substr(1, message[0].size() - 1);
+		std::string response = server.getName() + " INFO :" + user.getNickname() + " disconnected: " +  message[0] + "\r\n";
+		server.sendToAll(response, user);
+		std::string response = server.getName() + " QUIT :You have disconneted: " +  message[0] + "\r\n";
+		send(user.getSocket(), response.c_str(), response.size(), 0);
+	}
+	else
+	{
+		std::string response = server.getName() + " INFO :" + user.getNickname() + " disconneted from the server.\r\n";
+		server.sendToAll(response, user);
+		std::string response = server.getName() + " QUIT : You have disconneted from the server.\r\n";
+		send(user.getSocket(), response.c_str(), response.size(), 0);
+	}
+	close(user.getSocket());
+	user.setSocket(0);
+	server.removeUser(user);
+}
+
+//Server.cpp
+		for (size_t i = 0; i < _users.size(); i++)
+		{
+			sd = _users[i].getSocket();
+			if (FD_ISSET(sd, &readfds))
+			{
+				if ((valread = read(sd, buffer, 512)) == 0)
+				{
+					_partialCommands[_pending[i].getSocket()] = "";
+					handleMessage("QUIT\r\n", _users[i], false);
+					getpeername(sd, (struct sockaddr*)&_addr, (socklen_t*)&_addr_len);
+					std::cout << "Host disconnected, ip " << inet_ntoa(_addr.sin_addr) << ", port " << ntohs(_addr.sin_port) << std::endl;
+				}
+				else
+				{
+					buffer[valread] = '\0';
+					handleMessage(std::string(buffer), _users[i], true);
+					for (int i = 0; i < valread; i++)
+						buffer[i] = '\0';
+				}
+			}
+		}
