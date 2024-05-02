@@ -69,7 +69,7 @@ class Server
 		void handleCommand(std::string command, std::vector<std::string> message, User &user);
 		bool isCommandSupported(const std::string& command);
 		bool isCommandRegistered(const std::string& command);
-		void handleMessage(std::string input, User &user, bool isCommand);
+		void handleMessage(std::string input, User &user);
 		void sendToAll(std::string message, User &user);
 		void sendWelcomeMessage(User &user);
 		bool CheckNickCollision(User &user);

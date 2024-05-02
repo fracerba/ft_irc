@@ -556,3 +556,31 @@ void Command::help(User &user)
 	response = "HELP :HELP - Display this message\r\n";
 	send(user.getSocket(), response.c_str(), response.size(), 0);
 }
+
+void Command::controlQuit(User &user, Server &server)
+{
+	std::vector<std::string> channels = user.getChannels();
+	for (int i = 0; i < user.getNbChannels(); i++)
+	{
+		Channel *tmp = server.getChannel(channels[i]);
+		bool b = tmp->getNbOperators() == 1 && tmp->isOperator(user.getNickname()) && tmp->getNbUsers() > 1;
+		user.removeChannel(tmp->getName());
+		tmp->removeUser(user.getNickname());
+		if (b)
+			tmp->setNewOperator(user.getNickname(), server);
+		if (tmp->isEmpty())
+			server.removeChannel(*tmp);
+	}
+	std::string msg = ":" + user.getNickname() + "!" + user.getUsername() + "@localhost QUIT :\r\n";
+	server.sendToAll(msg, user);
+	for (size_t i = 0; i < channels.size(); i++)
+	{
+		if (!server.isChannelRegistered(channels[i]))
+			continue ;
+		Channel *tmp = server.getChannel(channels[i]);
+		tmp->UserList(&user, server);
+	}
+	close(user.getSocket());
+	user.setSocket(0);
+	server.removeUser(user);
+}

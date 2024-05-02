@@ -222,7 +222,7 @@ bool Server::isCommandRegistered(const std::string& command)
 	return false;
 }
 
-void Server::handleMessage(std::string input, User &user, bool isCommand)
+void Server::handleMessage(std::string input, User &user)
 {
 	if (input.empty())
 		return ;
@@ -232,13 +232,15 @@ void Server::handleMessage(std::string input, User &user, bool isCommand)
 	if ((newlinePos = _partialCommands[user.getSocket()].find("\n")) != std::string::npos || 
 		(newlinePos = _partialCommands[user.getSocket()].find("\r")) != std::string::npos)
 	{
-		if (isCommand)
-			std::cout << _partialCommands[user.getSocket()];
+		std::cout << _partialCommands[user.getSocket()];
 		std::string rawArgs = _partialCommands[user.getSocket()].substr(0, newlinePos);
 		std::vector<std::string> args;
 		split(rawArgs, " ", args);
 		if (args.size() == 0)
+		{
+			_partialCommands[user.getSocket()] = "";
 			return ;
+		}
 		std::string command = args[0];
 		args.erase(args.begin());
 		if (!isCommandSupported(command))
@@ -383,14 +385,14 @@ void	Server::start()
 				if ((valread = read(sd, buffer, 512)) == 0)
 				{
 					_partialCommands[_users[i].getSocket()] = "";
-					handleMessage("QUIT\n", _users[i], false);
+					Command::controlQuit(_users[i], *this);
 					getpeername(sd, (struct sockaddr*)&_addr, (socklen_t*)&_addr_len);
 					std::cout << "Host disconnected, ip " << inet_ntoa(_addr.sin_addr) << ", port " << ntohs(_addr.sin_port) << std::endl;
 				}
 				else
 				{
 					buffer[valread] = '\0';
-					handleMessage(std::string(buffer), _users[i], true);
+					handleMessage(std::string(buffer), _users[i]);
 					for (int i = 0; i < valread; i++)
 						buffer[i] = '\0';
 				}
@@ -413,7 +415,7 @@ void	Server::start()
 				else
 				{
 					buffer[valread] = '\0';
-					handleMessage(std::string(buffer), _pending[i], true);
+					handleMessage(std::string(buffer), _pending[i]);
 					for (int i = 0; i < valread; i++)
 						buffer[i] = '\0';
 					if (_pending[i].isUserRegistered())

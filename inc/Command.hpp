@@ -27,6 +27,7 @@ class Command
 		static void mode(std::vector<std::string> message, User &user, Server &server);
 		static void quit(std::vector<std::string> message, User &user, Server &server);
 		static void help(User &user);
+		static void controlQuit(User &user, Server &server);
 
 		static void botError(User &user);
 		static void botHelp(User &user);
